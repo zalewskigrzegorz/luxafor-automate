@@ -1,7 +1,7 @@
-import processWindows  from "node-process-windows"
+import processWindows  from 'node-process-windows';
 import { LuxaFlag } from 'luxa-driver';
 
-import config  from "./config.json" assert { type: 'json' }
+import config  from './config.json' assert { type: 'json' };
 
 const luxa = LuxaFlag.findOne();
 
@@ -19,6 +19,7 @@ const checkProcess = () =>
           return rule;
         }
       });
+      console.log({match});
       if (match) {
         await luxa.fade(match.color, {duration: Number(config.animationTime)})
       }

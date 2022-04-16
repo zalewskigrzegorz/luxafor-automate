@@ -6,12 +6,15 @@
   "type": "module",
   "scripts": {
     "test": "node processes.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "installService": "node WindowsService/install.js",
+    "uninstallService": "node WindowsService/uninstall.js"
   },
   "author": "Grzegorz Zalewski",
   "license": "ISC",
   "dependencies": {
     "luxa-driver": "^3.0.1",
-    "node-process-windows": "^0.0.2"
+    "node-process-windows": "^0.0.2",
+    "node-windows": "1.0.0-beta.6"
   }
 }
