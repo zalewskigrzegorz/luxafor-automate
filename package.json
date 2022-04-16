@@ -11,7 +11,7 @@
     "uninstallService": "node WindowsService/uninstall.js"
   },
   "author": "Grzegorz Zalewski",
-  "license": "ISC",
+  "license": "WTFPL",
   "dependencies": {
     "luxa-driver": "^3.0.1",
     "node-process-windows": "^0.0.2",
