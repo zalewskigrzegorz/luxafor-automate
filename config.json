@@ -1,0 +1,17 @@
+{
+  "defaultColor":"#228C22",
+  "brightness": "0.5",
+  "animationTime": "10",
+  "checkInterval": "5",
+  "rules": [
+    {
+      "processName": "chrome",
+      "color": "#4adede"
+    },
+    {
+      "processName": "Gw2-64",
+      "color": "#ff0000"
+    }
+  ]
+}
+

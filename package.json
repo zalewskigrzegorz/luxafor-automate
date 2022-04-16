@@ -1,0 +1,17 @@
+{
+  "name": "luxafor-automate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node processes.js",
+    "start": "node index.js"
+  },
+  "author": "Grzegorz Zalewski",
+  "license": "ISC",
+  "dependencies": {
+    "luxa-driver": "^3.0.1",
+    "node-process-windows": "^0.0.2"
+  }
+}
