@@ -1,4 +1,4 @@
-import processWindows  from 'node-process-windows';
+import psList from 'ps-list';
 import { LuxaFlag } from 'luxa-driver';
 
 import config  from './config.json' assert { type: 'json' };
@@ -8,26 +8,20 @@ const luxa = LuxaFlag.findOne();
 await luxa.flash('#f73772', {times:3, duration:10})
 await luxa.configure({ brightness: Number(config.brightness) });
 
-const checkProcess = () =>
-{
-
-  processWindows.getProcesses(async (_err, processes) => {
-
-      const match = config.rules.find((rule) => {
-        if( processes.find((process=> process.processName === rule.processName)))
-        {
-          return rule;
-        }
-      });
-      console.log({match});
-      if (match) {
-        await luxa.fade(match.color, {duration: Number(config.animationTime)})
+const checkProcess = async () => {
+  const processes = await psList();
+  if(processes.length){
+    const match = config.rules.find((rule) => {
+      if (processes.find((process => process.name === rule.processName))) {
+        return rule;
       }
-      else{
-        await luxa.fade(config.defaultColor, {duration: Number(config.animationTime)})
-      }
+    });
+    if (match) {
+      await luxa.fade(match.color, {duration: Number(config.animationTime)})
+    } else {
+      await luxa.fade(config.defaultColor, {duration: Number(config.animationTime)})
     }
-  );
+  }
 }
 
 process.stdin.resume();//so the program will not close instantly

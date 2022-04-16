@@ -1,4 +1,3 @@
-import processWindows  from 'node-process-windows'
-  processWindows.getProcesses(async (_err, processes) => {
-      console.dir(processes);
-  });
+import psList from 'ps-list';
+
+console.dir(await psList(),{'maxArrayLength': null});

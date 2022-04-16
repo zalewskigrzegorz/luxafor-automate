@@ -20,11 +20,11 @@ choose processName what you are interested in and put in to config.json
   "checkInterval": "5", - time between check Process running in seconds
   "rules": [ - rulles first match always wins.
     {
-      "processName": "chrome", - process name 
+      "processName": "chrome.exe", - process name 
       "color": "#4adede" - color in hex
     },
     {
-      "processName": "Gw2-64",
+      "processName": "Gw2-64.exe",
       "color": "#ff0000"
     }
   ]

@@ -5,11 +5,11 @@
   "checkInterval": "5",
   "rules": [
     {
-      "processName": "Gw2-64",
+      "processName": "Gw2-64.exe",
       "color": "#ff0000"
     },
     {
-      "processName": "chrome",
+      "processName": "chrome.exe",
       "color": "#4adede"
     }
   ]
